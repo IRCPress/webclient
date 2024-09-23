@@ -1,0 +1,652 @@
+
+:root {
+    --qtpi-green:#418041;
+    --qtpi-grey:linear-gradient(#212529, #272727, #212529);;
+    --qtpi : linear-gradient(#422121, #610404);
+    --qtpi-button:linear-gradient(#212529, #272727)
+}
+
+#input::placeholder {
+	color: #bbbbbb;
+}
+body {
+	overflow: hidden;
+}
+
+.btn-green {
+	background-color: #418041;
+	border: 2px solid black;
+	color: white;
+	font-weight: 600;
+}
+.btn-green:hover {
+	background-color: #006400;
+	border: 2px solid black;
+	color: white;
+	font-weight: 600;
+}
+
+.bg-nihao {
+	background-color:#8a8a8a;
+	color: white;
+}
+
+.bg-nihao-dark {
+	color: white;
+	background-color: #212529;
+}
+
+.other-privmsg {
+	display: inline-block;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius: 12px;
+	color: white;
+	max-width: 60%;
+	/* From https://css.glass */
+	background-color: rgba(34, 34, 34, 0.74);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.8px);
+	-webkit-backdrop-filter: blur(10.8px);
+	border: 1px solid rgba(34, 34, 34, 0.78);
+	transition: background-color 0.5s ease
+}
+.other-action {
+	display: inline-block;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius: 12px;
+	color: white;
+	background-color: #2f343a;
+	max-width: 60%;
+}
+
+.other-privmsg::before {
+	content: '';
+	margin-left: 20px;
+	position: absolute;
+	right: 100%;
+	top: 8px;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-right: 10px solid #212529;
+	border-bottom: 7px solid transparent;
+
+}
+.other-privmsg:hover::before {
+	border-right: 10px solid #000000;
+}
+
+.other-privmsg:hover {
+	background-color: rgba(34, 34, 34, 1);
+}
+.other-action:hover {
+	background-color: #2f343a;
+}
+
+.our-privmsg {
+	display: inline-block;
+	border-radius: 12px;
+	color: black;
+	border: 0.2px solid black;
+	background-color: rgba(65, 128, 65, 0.7);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.8px);
+	-webkit-backdrop-filter: blur(10.8px);
+	width: auto; /* Let the width adjust automatically based on content */
+	padding-right: 10px; /* Add padding to account for the badge content */
+	position: relative;
+	max-width: 60%;
+	transition: background-color 0.5s ease;
+  }
+
+  .our-privmsg:hover {
+	background-color: rgba(65, 128, 65, 1);
+}
+.our-privmsg::before {
+	content: '';
+	margin-right: 20px;
+	position: absolute;
+	left: calc(100% + 1px);
+	top: 8px;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-left: 10px solid rgba(0, 0, 0, 0.541);
+	border-bottom: 7px solid transparent;
+
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin-bottom: 80px; /* Margin bottom by footer height */
+}
+.footer {
+	width:100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 60px; /* Set the fixed height of the footer here */
+	line-height: 0px; /* Vertically center the text there */
+}
+
+.window-window {
+    background: var(--qtpi-button);
+}
+
+#treebar {
+	position: fixed;
+	top: 67px;
+	left: 0;
+	bottom: 60px;
+	height: calc(100% - 67px - 60px);
+	width: 300px;
+    background: var(--qtpi-button);
+	overflow-y: scroll
+}
+
+#nicklistwindow {
+	position: fixed;
+	top: 67px;
+	right: 0;
+	bottom: 60px;
+	height: calc(100% - 67px - 60px);
+	width: 300px;
+	overflow-y: scroll;
+
+}
+
+.output {
+	padding-top: 10px;
+	position: fixed;
+	top: 106px;
+	left:300px;
+	width:calc(100% - 300px - 300px);
+	height:calc(100% - 196px);
+	overflow-y:scroll;
+	margin-bottom:auto;
+	background-color: darkgray;
+	z-index: 1;
+}
+.typing {
+	border-style:ridge;
+	border-width: 1px;
+	border-color:#212529;
+	position: fixed;
+	bottom: 60px;
+	left: 300px;
+	padding-left: 10px;
+	width:calc(100% - 300px - 300px);
+	height:30px;
+    background-color: rgba(151, 151, 151, 0.877);
+}
+.topic {
+	border-style:ridge;
+	border-width: 1px;
+	border-color:#212529;
+	position: fixed;
+	top: 67px;
+	left: 300px;
+	padding-left: 10px;
+	width:calc(100% - 300px - 300px);
+	height:40px;
+    background-color: rgba(151, 151, 151, 0.877);
+	z-index: 2;
+}
+/*control codes*/
+.IRCCC00 { background-color: #FFFFFF; }
+.IRCCC01 { background-color: #000000; }
+.IRCCC02 { background-color: #000080; }
+.IRCCC03 { background-color: #008000; }
+.IRCCC04 { background-color: #FF0000; }
+.IRCCC05 { background-color: #A52A2A; }
+.IRCCC06 { background-color: #800080; }
+.IRCCC07 { background-color: #FFA500; }
+.IRCCC08 { background-color: #FFFF00; }
+.IRCCC09 { background-color: #00FF00; }
+.IRCCC10 { background-color: #008080; }
+.IRCCC11 { background-color: #E0FFFF; }
+.IRCCC12 { background-color: #0000FF; }
+.IRCCC13 { background-color: #FFC0CB; }
+.IRCCC14 { background-color: #808080; }
+.IRCCC15 { background-color: #D3D3D3; }
+.IRCCC16 { background-color: #A9A9A9; }
+.IRCCC17 { background-color: #B0E0E6; }
+.IRCCC18 { background-color: #00008B; }
+.IRCCC19 { background-color: #00FF7F; }
+.IRCCC20 { background-color: #006400; }
+.IRCCC21 { background-color: #FF4500; }
+.IRCCC22 { background-color: #8B0000; }
+.IRCCC23 { background-color: #9966CC; }
+.IRCCC24 { background-color: #8B4513; }
+.IRCCC25 { background-color: #9400D3; }
+.IRCCC26 { background-color: #800080; }
+.IRCCC27 { background-color: #FFA500; }
+.IRCCC28 { background-color: #FFD700; }
+.IRCCC29 { background-color: #32CD32; }
+.IRCCC30 { background-color: #FFFF00; }
+.IRCCC31 { background-color: #DAA520; }
+.IRCCC32 { background-color: #FFFF00; }
+.IRCCC33 { background-color: #32CD32; }
+.IRCCC34 { background-color: #00FF00; }
+.IRCCC35 { background-color: #008080; }
+.IRCCC36 { background-color: #008B8B; }
+.IRCCC37 { background-color: #E0FFFF; }
+.IRCCC38 { background-color: #008B8B; }
+.IRCCC39 { background-color: #B0E0E6; }
+.IRCCC40 { background-color: #0000EE; }
+.IRCCC41 { background-color: #9ACD32; }
+.IRCCC42 { background-color: #006400; }
+.IRCCC43 { background-color: #FF4500; }
+.IRCCC44 { background-color: #8B0000; }
+.IRCCC45 { background-color: #9966CC; }
+.IRCCC46 { background-color: #8B4513; }
+.IRCCC47 { background-color: #9400D3; }
+.IRCCC48 { background-color: #800080; }
+.IRCCC49 { background-color: #FFA500; }
+.IRCCC50 { background-color: #FFD700; }
+.IRCCC51 { background-color: #32CD32; }
+.IRCCC52 { background-color: #FFFF00; }
+.IRCCC53 { background-color: #DAA520; }
+.IRCCC54 { background-color: #FFFF00; }
+.IRCCC55 { background-color: #32CD32; }
+.IRCCC56 { background-color: #00FF00; }
+.IRCCC57 { background-color: #008080; }
+.IRCCC58 { background-color: #008B8B; }
+.IRCCC59 { background-color: #E0FFFF; }
+.IRCCC60 { background-color: #008B8B; }
+.IRCCC61 { background-color: #B0E0E6; }
+.IRCCC62 { background-color: #0000EE; }
+.IRCCC63 { background-color: #9ACD32; }
+.IRCCC64 { background-color: #006400; }
+.IRCCC65 { background-color: #FF4500; }
+.IRCCC66 { background-color: #8B0000; }
+.IRCCC67 { background-color: #9966CC; }
+.IRCCC68 { background-color: #8B4513; }
+.IRCCC69 { background-color: #9400D3; }
+.IRCCC70 { background-color: #800080; }
+.IRCCC71 { background-color: #FFA500; }
+.IRCCC72 { background-color: #FFD700; }
+.IRCCC73 { background-color: #32CD32; }
+.IRCCC74 { background-color: #FFFF00; }
+.IRCCC75 { background-color: #DAA520; }
+.IRCCC76 { background-color: #FFFF00; }
+.IRCCC77 { background-color: #32CD32; }
+.IRCCC78 { background-color: #00FF00; }
+.IRCCC79 { background-color: #008080; }
+.IRCCC80 { background-color: #008B8B; }
+.IRCCC81 { background-color: #E0FFFF; }
+.IRCCC82 { background-color: #008B8B; }
+.IRCCC83 { background-color: #B0E0E6; }
+.IRCCC84 { background-color: #0000EE; }
+.IRCCC85 { background-color: #9ACD32; }
+.IRCCC86 { background-color: #006400; }
+.IRCCC87 { background-color: #FF4500; }
+.IRCCC88 { background-color: #8B0000; }
+.IRCCC89 { background-color: #9966CC; }
+.IRCCC90 { background-color: #8B4513; }
+.IRCCC91 { background-color: #9400D3; }
+.IRCCC92 { background-color: #800080; }
+.IRCCC93 { background-color: #FFA500; }
+.IRCCC94 { background-color: #FFD700; }
+.IRCCC95 { background-color: #32CD32; }
+.IRCCC96 { background-color: #FFFF00; }
+.IRCCC97 { background-color: #DAA520; }
+.IRCCC98 { background-color: #FFFF00; }
+.IRCCC99 { background-color: #32CD32; }
+
+.IRCCF00 { color: #FFFFFF; }
+.IRCCF01 { color: #000000; }
+.IRCCF02 { color: #000080; }
+.IRCCF03 { color: #008000; }
+.IRCCF04 { color: #FF0000; }
+.IRCCF05 { color: #A52A2A; }
+.IRCCF06 { color: #800080; }
+.IRCCF07 { color: #FFA500; }
+.IRCCF08 { color: #FFFF00; }
+.IRCCF09 { color: #00FF00; }
+.IRCCF10 { color: #008080; }
+.IRCCF11 { color: #E0FFFF; }
+.IRCCF12 { color: #0000FF; }
+.IRCCF13 { color: #FFC0CB; }
+.IRCCF14 { color: #808080; }
+.IRCCF15 { color: #D3D3D3; }
+.IRCCF16 { color: #A9A9A9; }
+.IRCCF17 { color: #B0E0E6; }
+.IRCCF18 { color: #00008B; }
+.IRCCF19 { color: #00FF7F; }
+.IRCCF20 { color: #006400; }
+.IRCCF21 { color: #FF4500; }
+.IRCCF22 { color: #8B0000; }
+.IRCCF23 { color: #9966CC; }
+.IRCCF24 { color: #8B4513; }
+.IRCCF25 { color: #9400D3; }
+.IRCCF26 { color: #800080; }
+.IRCCF27 { color: #FFA500; }
+.IRCCF28 { color: #FFD700; }
+.IRCCF29 { color: #32CD32; }
+.IRCCF30 { color: #FFFF00; }
+.IRCCF31 { color: #DAA520; }
+.IRCCF32 { color: #FFFF00; }
+.IRCCF33 { color: #32CD32; }
+.IRCCF34 { color: #00FF00; }
+.IRCCF35 { color: #008080; }
+.IRCCF36 { color: #008B8B; }
+.IRCCF37 { color: #E0FFFF; }
+.IRCCF38 { color: #008B8B; }
+.IRCCF39 { color: #B0E0E6; }
+.IRCCF40 { color: #0000EE; }
+.IRCCF41 { color: #9ACD32; }
+.IRCCF42 { color: #006400; }
+.IRCCF43 { color: #FF4500; }
+.IRCCF44 { color: #8B0000; }
+.IRCCF45 { color: #9966CC; }
+.IRCCF46 { color: #8B4513; }
+.IRCCF47 { color: #9400D3; }
+.IRCCF48 { color: #800080; }
+.IRCCF49 { color: #FFA500; }
+.IRCCF50 { color: #FFD700; }
+.IRCCF51 { color: #32CD32; }
+.IRCCF52 { color: #FFFF00; }
+.IRCCF53 { color: #DAA520; }
+.IRCCF54 { color: #FFFF00; }
+.IRCCF55 { color: #32CD32; }
+.IRCCF56 { color: #00FF00; }
+.IRCCF57 { color: #008080; }
+.IRCCF58 { color: #008B8B; }
+.IRCCF59 { color: #E0FFFF; }
+.IRCCF60 { color: #008B8B; }
+.IRCCF61 { color: #B0E0E6; }
+.IRCCF62 { color: #0000EE; }
+.IRCCF63 { color: #9ACD32; }
+.IRCCF64 { color: #006400; }
+.IRCCF65 { color: #FF4500; }
+.IRCCF66 { color: #8B0000; }
+.IRCCF67 { color: #9966CC; }
+.IRCCF68 { color: #8B4513; }
+.IRCCF69 { color: #9400D3; }
+.IRCCF70 { color: #800080; }
+.IRCCF71 { color: #FFA500; }
+.IRCCF72 { color: #FFD700; }
+.IRCCF73 { color: #32CD32; }
+.IRCCF74 { color: #FFFF00; }
+.IRCCF75 { color: #DAA520; }
+.IRCCF76 { color: #FFFF00; }
+.IRCCF77 { color: #32CD32; }
+.IRCCF78 { color: #00FF00; }
+.IRCCF79 { color: #008080; }
+.IRCCF80 { color: #008B8B; }
+.IRCCF81 { color: #E0FFFF; }
+.IRCCF82 { color: #008B8B; }
+.IRCCF83 { color: #B0E0E6; }
+.IRCCF84 { color: #0000EE; }
+.IRCCF85 { color: #9ACD32; }
+.IRCCF86 { color: #006400; }
+.IRCCF87 { color: #FF4500; }
+.IRCCF88 { color: #8B0000; }
+.IRCCF89 { color: #9966CC; }
+.IRCCF90 { color: #8B4513; }
+.IRCCF91 { color: #9400D3; }
+.IRCCF92 { color: #800080; }
+.IRCCF93 { color: #FFA500; }
+.IRCCF94 { color: #FFD700; }
+.IRCCF95 { color: #32CD32; }
+.IRCCF96 { color: #FFFF00; }
+.IRCCF97 { color: #DAA520; }
+.IRCCF98 { color: #FFFF00; }
+.IRCCF99 { color: #32CD32; }
+
+.lastsaid {
+	position: absolute;
+	bottom: 0;
+	
+	font-size: smaller;
+	color: var(--qtpi-grey);
+}
+
+.glass {
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+.channel-button {
+	margin-top: 3px;
+	margin-bottom: 2px;
+	margin-left: 1px;
+	width: calc(100% - 5px);
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,29,29,1) 48%, rgba(34,34,34,1) 100%);
+}
+
+.message-contents {
+	margin: 5px;
+	overflow: hidden;
+}
+
+.nicklist-user {
+	--width: 295px;
+	--height:calc(var(--width) / 2.65);
+	width: var(--width);
+	height: var(--height);
+	margin: 2px;
+	border: 1px solid grey;
+	padding:5px;
+	display: block;
+	color: white;
+	border-radius: 8px;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,29,29,1) 48%, rgba(34,34,34,1) 100%);
+	
+}
+
+.profile-view-theme {
+	--width: 500px;
+	--height:calc(var(--width) / 2.65);
+	width: var(--width);
+	height: var(--height);
+	margin-top:-16px;
+	margin-left:-17px;
+}
+
+.profile-avatar-view {
+	height: 90px;
+	width: 90px;
+	border-radius: 50px;
+	margin-top:-40px;
+	margin-bottom:20px;
+	z-index: 10;
+	will-change: transform;
+	border: black ridge 2px;
+
+	background-image: url(/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg);
+	background-size: contain;
+}
+
+.profile-view-channels {
+	margin-top: -50px;
+}
+
+.profile-view-nick {
+	position:relative;
+	top: -60px;
+	left: 100px;
+  }
+.profile-view-geo {
+	position: relative;
+	top: -90px;
+}
+
+#profileModal .modal-content {
+	overflow: hidden;
+}
+.away-here {
+	background-color: green;
+	border-radius: 25px;
+	height: 5px;
+	width: 5px;
+}
+.away-gone {
+	background-color: red;
+	border-radius: 25px;
+	max-height: 2px;
+	max-width: 2px;
+}
+
+.nicklistnick {
+	background-color: var(--qtpi-grey);
+	border-radius: 12px;
+	max-width: fit-content;
+}
+
+.nicklist-theme {
+	
+	position: relative;
+	overflow: hidden; /* Keep everything inside the rounded corners */
+	padding: 10px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-clip: padding-box; /* Ensure the image fits within the padding box */
+
+	/* Create glass and shadow effects */
+	background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent layer over image */
+	backdrop-filter: blur(5px); /* Glass blur effect */
+	box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.7), /* Inner glow */
+				0 4px 30px rgba(0, 0, 0, 0.1); /* Outer shadow */
+  	transition: all 0.3s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+	.nicklist-theme {
+	 
+		animation: none; /* Disable any CSS-based animations */	
+	}
+}
+.nicklist-theme:hover {
+	box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.4), /* Inner glow */
+				0 4px 30px rgba(0, 0, 0, 0.2); /* Outer shadow */
+
+}
+
+/* bootstrap override for avatar to stop it being weird */
+.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+	border-top-right-radius: 100%;
+	border-bottom-right-radius: 100%;
+}
+
+.avatar {
+	--avatar-dimensions: 60px;
+	height:var(--avatar-dimensions);
+	width:var(--avatar-dimensions);
+	border-radius: 100%;
+	border: #1b1b1b;
+	border-width: 2px;
+	background-image: url(/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg);
+	background-size: contain;
+}
+
+.self-avatar {
+	float:right;
+	border: #1b1b1b;
+	border-width: 2px;
+}
+
+.nicklist-status-badge {
+	margin: 5px;
+	margin-top: 0;
+}
+
+.send-btn {
+	background: #53bd7d;
+	background-image: -webkit-linear-gradient(top, #53bd7d, #539463);
+	background-image: -moz-linear-gradient(top, #53bd7d, #539463);
+	background-image: -ms-linear-gradient(top, #53bd7d, #539463);
+	background-image: -o-linear-gradient(top, #53bd7d, #539463);
+	background-image: linear-gradient(to bottom, #53bd7d, #539463);
+	-webkit-border-radius: 13;
+	-moz-border-radius: 13;
+	border-radius: 13px;
+	font-family: Courier New;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+  }
+  
+  .send-btn:hover {
+	text-decoration: none;
+  }
+
+.embedded-chat-image {
+	border-radius: 8px;
+	max-width: 500px;
+}
+
+.embed-content {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 10px;
+	margin-top: 10px;
+	max-width: 300px;
+	width: fit-content;
+}
+
+.message-buttons-container {
+	position: absolute;
+	right: 20px;
+	bottom: -15px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.privmsg:hover .message-buttons-container {
+	opacity: 1;
+}
+
+.message-buttons-choice {
+	margin-left: 5px;
+	padding-bottom: 2px;
+	font-size:16px;
+}
+
+.lastsaid {
+	overflow: hidden;
+}
+
+.btn.btn-sm.script-button {
+	margin: 2px;
+}
+
+.d-flex.alert {
+	padding: 0px;
+}
+
+.options-card {
+	position:fixed;
+	bottom:60px;
+	left:0;
+	z-index:300;
+	width:fit-content;
+	background-color: black;
+	padding:1px;
+}
+
+.col.btn-dark{
+	height: 80px;
+	width: 200px;
+	margin:3px;
+}
+
+.fa-solid.fa-arrow-up-from-bracket {
+	font-size: 36px;
+}
+.fa-solid.fa-square-poll-vertical {
+	font-size: 36px;
+}

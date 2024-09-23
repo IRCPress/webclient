@@ -1,0 +1,76 @@
+/* UK theme */
+
+.theme {
+    position:absolute;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+/* Countries flags */
+.theme-uk {
+    background-image: url(/webclient/img/uk.jpg);
+}
+
+.theme-việtnam {
+    background-image: url(/webclient/img/vietnam.jpg);
+}
+
+.theme-méxico {
+    background-image: url(/webclient/img/mexico.jpg);
+}
+
+.theme-usa {
+    background-image: url(/webclient/img/usa.png);
+}
+
+.theme-中国 {
+
+    background-image: url(/webclient/img/china.jpg);
+}
+
+.theme-algeria {
+
+    background-image: url(/webclient/img/algeria.jpg);
+}
+
+.theme-france {
+
+    background-image: url(/webclient/img/france.jpg);
+}
+.theme-netherlands {
+
+    background-image: url(/webclient/img/netherlands.jpg);
+}
+
+/* Misc themes */
+
+.theme-dream {
+    background-image: url(/webclient/img/dream.webp);
+}
+
+.theme-galaxy {
+    background-image: url(/webclient/img/galaxy.jpg);
+}
+.theme-math {
+    background-image: url(/webclient/img/math.png);
+}
+
+.theme-pebbles {
+    background-image: url(/webclient/img/pebbles.jpg);
+}
+.theme-trendy {
+    background-image: url(/webclient/img/trendy.jpg);
+}
+
+.theme-security {
+    background-image: url(/webclient/img/security.jpeg);
+}
+
+.theme-earth {
+    background-image: url(/webclient/img/earth.jpg);
+}
+
+.select-react {
+    font-size:25px;
+    cursor: pointer;
+}
